@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch with iframe</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #sketch-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="sketch-container"></div>
+    <iframe src="https://www.et.tku.edu.tw/"></iframe>
+    <script src="sketch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+2023-10-17 10:00:00
+User: 產生一條線，從畫布底部往上延伸，線條的底部不動(Y軸座標比較大的位置)，上方線條左右擺動
+Copilot: 
+```javascript
+function setup() { //初始設定函數，只會執行一次
+  // ...existing code...
+}
+
+function draw() { //繪圖函數，會一直執行
+  // ...existing code...
+  //設定畫筆顏色
+  stroke(0); // 設定線條顏色為黑色
+  strokeWeight(2); // 設定線條粗細
+
+  // 計算線條上方的X軸座標，使其左右擺動
+  let x = windowWidth / 2 + sin(frameCount * 0.05) * 100;
+
+  // 繪製線條，從畫布底部往上延伸
+  line(windowWidth / 2, windowHeight, x, windowHeight - 200);
+}
+```
+
+2023-10-17 10:05:00
+User: 幫我在chat.txt上記錄所有在copilot上對話的紀錄
+Copilot: 
+```markdown
+// filepath: c:\Users\User\Desktop\0317\chat.txt
+2023-10-17 10:00:00
+User: 產生一條線，從畫布底部往上延伸，線條的底部不動(Y軸座標比較大的位置)，上方線條左右擺動
+Copilot: 
+```javascript
+function setup() { //初始設定函數，只會執行一次
+  // ...existing code...
+}
+
+function draw() { //繪圖函數，會一直執行
+  // ...existing code...
+  //設定畫筆顏色
+  stroke(0); // 設定線條顏色為黑色
+  strokeWeight(2); // 設定線條粗細
+
+  // 計算線條上方的X軸座標，使其左右擺動
+  let x = windowWidth / 2 + sin(frameCount * 0.05) * 100;
+
+  // 繪製線條，從畫布底部往上延伸
+  line(windowWidth / 2, windowHeight, x, windowHeight - 200);
+}
+```
+
+2023-10-17 10:10:00
+User: 可以幫我改成直立搖晃而不是躺平搖晃的方式嗎
+Copilot: 
+```javascript
+function setup() { //初始設定函數，只會執行一次
+  // ...existing code...
+}
+
+function draw() { //繪圖函數，會一直執行
+  // ...existing code...
+  //設定畫筆顏色
+  stroke(0); // 設定線條顏色為黑色
+  strokeWeight(20); // 設定線條粗細
+
+  // 計算線條每個節點的Y軸座標，使其上下擺動
+  let segments = 10;
+  let segmentLength = 50;
+  let x = windowWidth / 2;
+  let y = windowHeight;
+  
+  for (let i = 0; i < segments; i++) {
+    let angle = sin(frameCount * 0.05 + i * 0.5) * 0.5;
+    let newX = x + cos(angle) * segmentLength;
+    let newY = y - segmentLength;
+    line(x, y, newX, newY);
+    x = newX;
+    y = newY;
+  }
+}
+```
+
+2023-10-17 10:15:00
+User: 我希望這條線能夠大略與y軸呈90度而不是45度
+Copilot: 
+```javascript
+function setup() { //初始設定函數，只會執行一次
+  // ...existing code...
+}
+
+function draw() { //繪圖函數，會一直執行
+  // ...existing code...
+  //設定畫筆顏色
+  stroke(0); // 設定線條顏色為黑色
+  strokeWeight(20); // 設定線條粗細
+
+  // 計算線條每個節點的Y軸座標，使其上下擺動
+  let segments = 10;
+  let segmentLength = 50;
+  let x = windowWidth / 2;
+  let y = windowHeight;
+  
+  for (let i = 0; i < segments; i++) {
+    let angle = sin(frameCount * 0.05 + i * 0.5) * 0.5;
+    let newX = x + sin(angle) * segmentLength;
+    let newY = y - segmentLength;
+    line(x, y, newX, newY);
+    x = newX;
+    y = newY;
+  }
+}
+```
